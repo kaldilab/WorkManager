@@ -1,0 +1,165 @@
+@charset "utf-8";
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// Color
+$brand: #d91f29;
+$brand-s1: #199df5;
+$brand-s2: #111111;
+$brand-s3: #333850;
+$brand-s4: #1b3689;
+$font-c1: #111111;
+$font-c2: #767676;
+$font-c3: #999999;
+$bg-c1: #f7f7fb;
+$bg-c2: #fcedee;
+$line-c1: #e5e5e5;
+$line-c2: #f2b5b8;
+$line-c3: #111111;
+$black: #000;
+$white: #fff;
+
+// Font
+$font-united: 'Roboto', 'Noto Sans KR', sans-serif;
+$font-noto: 'Noto Sans KR', sans-serif;
+$font-roboto: 'Roboto', sans-serif;
+$font-mono: var(--bs-font-monospace);
+$font-s32: 3.2rem;
+$font-s28: 2.8rem;
+$font-s24: 2.4rem;
+$font-s20: 2rem;
+$font-s18: 1.8rem;
+$font-s16: 1.6rem;
+$font-s14: 1.4rem;
+$font-s12: 1.2rem;
+
+// Button
+$btn-h56: 5.6rem;
+$btn-h48: 4.8rem;
+$btn-h40: 4rem;
+$btn-h32: 3.2rem;
+$btn-p1: 0 2rem;
+$btn-p2: 0 1.6rem;
+$btn-f1: 1.5rem;
+$btn-f2: 1.4rem;
+
+// Form
+$form-h1: 4.8rem;
+$form-h2: 4.4rem;
+$form-h3: 4rem;
+$form-h4: 3.6rem;
+$form-h5: 3.2rem;
+
+// Space
+$space: 5.4rem;
+$side: 6rem;
+$modal-header: 6rem;
+$modal-small-header: 5.6rem;
+$modal-footer: 9.6rem;
+$gap: 3.5rem;
+$mediaview: 12rem;
+$editor: 4.6rem;
+$scrollbar-width: 0.6rem;
+
+// Width
+$width-1440: 1440px;
+$width-520: 520px;
+$width-420: 420px;
+$width-350: 350px;
+
+// Header
+$header-height: 9.6rem;
+
+// Editor
+$theme-bg: #1d1f21;
+$theme-line: #36373d;
+
+// Filter
+$filter-brand: invert(25%) sepia(82%) saturate(2134%) hue-rotate(337deg) brightness(85%) contrast(110%);
+$filter-agency: invert(16%) sepia(64%) saturate(2533%) hue-rotate(216deg) brightness(94%) contrast(97%);
+$filter-white: invert(100%);
+$filter-disabled: invert(68%) sepia(0%) saturate(0%) hue-rotate(160deg) brightness(90%) contrast(87%);
+
+// Shadow
+$shadow-1: 0 0.5rem 2rem 0 rgba($black, 0.2);
+$shadow-2: 0 0 3rem 0 rgba($black, 0.3);
+
+// mixin
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin truncateMulti($number) {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin objectFit($value) {
+  width: 100%;
+  height: 100%;
+  object-fit: $value;
+}
+@mixin hoverHide {
+  visibility: hidden;
+  opacity: 0;
+}
+@mixin hoverShow {
+  visibility: visible;
+  opacity: 1;
+}
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $bg-c1;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $font-c3;
+    border-radius: 0.3rem;
+  }
+}
+@mixin btnThumb($btnSize, $imageSize) {
+  width: #{$btnSize}rem;
+  height: #{$btnSize}rem;
+  &::before {
+    width: #{$imageSize}rem;
+    height: #{$imageSize}rem;
+  }
+}
+@mixin btnThumbImage($image) {
+  &::before {
+    background-image: url('../images/icons/#{$image}.svg');
+  }
+}
+@mixin btnThumbText($btnSize, $imageSize) {
+  height: #{$btnSize}rem;
+  padding: 0.6rem;
+  &::before {
+    width: #{$imageSize}rem;
+    height: #{$imageSize}rem;
+  }
+}
+@mixin clearFix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+@mixin visuallyHidden() {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
